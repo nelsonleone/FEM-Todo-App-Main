@@ -2,7 +2,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateActiveTodosCount } from "../features/todoSlice";
-import { TodoItem } from "./todoItem";
+import Todo from "./Todo";
 
 
 export default function Tab(){
@@ -32,7 +32,7 @@ export default function Tab(){
           &&
           todos.map(todo => {
             return(
-               <TodoItem  
+               <Todo  
                   key={nanoid()} 
                   {...todo}
                />
@@ -45,7 +45,7 @@ export default function Tab(){
           &&
           todos.map(todo => {
             return todo.isActive && (
-               <TodoItem  
+               <Todo  
                   key={nanoid()} 
                   {...todo}
                />
@@ -58,7 +58,7 @@ export default function Tab(){
           &&
           todos.map(todo => {
             return todo.isCompleted && (
-               <TodoItem  
+               <Todo  
                   key={nanoid()} 
                   {...todo}
                />
