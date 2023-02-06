@@ -1,0 +1,72 @@
+@use '../global/colors';
+
+$pd-tab: 1em 0 .7em 1em;
+$bp-large: 50rem;
+$tab_FooterBtn-Transition: .3s ease-in-out;
+
+.sr-only{
+   position:absolute;
+   left:-100000px;
+   top:-100000px;
+}
+
+
+@mixin flexObj($direction:row,$align:center,$justify:space-between){
+   display:flex;
+   justify-content: $justify;
+   align-items: $align;
+   flex-direction: $direction;
+}
+
+.check-area{
+   border: 1px solid  var(--clr-text-Color1);
+   border-radius: 50%;
+   aspect-ratio: 1/1;
+   width:1.6em;
+   position: relative;
+   transition: .3s ease-out;
+   img{
+      position: absolute;
+      left:-50%;
+      right:-50%;
+      top:0;
+      bottom: 0;
+      margin:auto;
+      display:none;
+   }
+
+   &:hover{
+      border:1px solid  hsl(280deg, 87%, 65%);
+   }
+}
+
+.cancle-btn{
+   width:1em;
+}
+
+@mixin bG-bR{
+  background-color: var(--clr-tab-bg-Color);
+  border-radius: 7px;
+}
+
+
+@mixin breakPoint{
+  @media (min-width:$bp-large){
+     @content;
+  }
+}
+
+@mixin maxWidth{
+   max-width:90%;
+   @media (min-width:$bp-large){
+      max-width:27em;
+   }
+}
+
+@mixin respBg{
+  background:var(--bg-mobile);
+
+  @media (min-width:$bp-large) {
+   background:var(--bg-desktop);
+  }
+}

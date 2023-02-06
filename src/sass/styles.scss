@@ -1,0 +1,217 @@
+@forward 'global';
+@forward 'reset';
+@use './global/colors' as *;
+@use './utils/' as  *;
+@use './global/typo' as *;
+@forward 'utils';
+
+[data-theme="light"]{
+   @include renderLightTheme;
+   @include renderLightThemeImage;
+}
+
+[data-theme="dark"]{
+   @include renderDarkTheme;
+   @include renderDarkThemeImage;
+}
+
+.App{
+   background-color: var(--clr-bg-Color1);
+   width:100%;
+   min-height:100vh;
+}
+
+header{
+   @include respBg;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height:39vh;
+   padding-top:3em;
+   width:100%;
+
+
+   div{
+      display:flex;
+      margin-inline:auto;
+      @include flexObj;
+      @include maxWidth;
+      z-index:100;
+      position: relative;
+
+      .toggle-theme{
+         width:1.7em;
+         margin-right:.5em;
+         transition: all .3s linear;
+
+         &:hover{
+            scale:1.1;
+            transform: rotate(90deg);
+         }
+      }
+   }
+}
+
+
+main{
+   margin-inline:auto;
+   position: relative;
+   top:-4.6em;
+   z-index:100;
+
+   @include maxWidth;
+}
+
+.input-area{
+   padding:$pd-tab;
+   @include bG-bR;
+   @include flexObj(row,center,start);
+   input{
+      background:transparent;
+      margin-left:1em;
+      font-size: $fs-input;
+      color: var( --clr-on-Hover);
+
+      &::placeholder{
+         color:var(--clr-text-Color1);
+      }
+   }
+}
+
+.todo-list{
+   margin-top:.8em;
+   @include bG-bR;
+   
+   li{
+      @include flexObj;
+      padding:$pd-tab;
+      border-bottom: 1px solid var(--clr-bg-Color1);
+      color: var( --clr-on-Hover);
+      transition: text-decoration .3s ease-in;
+      button{
+         margin-right:1.4em;
+      }
+      span{
+         @include flexObj;
+      }
+   }
+
+   li:last-of-type{
+      border:none;
+   }
+
+   .completed-todo{
+      text-decoration: line-through;
+      text-decoration-color: var(--clr-text-Color2);
+      color: var(--clr-text-Color2);
+
+      .check-area{
+        background:var(--clr-check-Background);
+
+        img{
+         display: block;
+        }
+      }
+   }
+}
+
+.tab-selectors{
+   @include bG-bR;
+   @include flexObj(row,center,center);
+   gap:18px;
+   margin-top:1em;
+   padding:$pd-tab;
+
+   button{
+      font-weight: 700;
+      text-transform:capitalize;
+      transition:$tab_FooterBtn-Transition;
+      color: var(--clr-text-Color1);
+
+      &:hover{
+         color:var( --clr-on-Hover);
+      }
+   }
+
+   .active{
+      color: var(--clr-primary-Bright-Blue);
+
+      &:hover{
+         color:var(--clr-primary-Bright-Blue);
+      }
+   }
+
+   @include breakPoint{
+      position: absolute;
+      bottom:0;
+      left:-50%;
+      right:-50%;
+      margin:auto;
+      max-width:20%;
+      background:none;
+   }
+}
+
+
+.activeCount__clear{
+   color:  var( --clr-text-Color1) !important;
+   .items-count{
+      font-size: $fs-input;
+      span{
+         margin-right:.4em;
+      }
+   }
+
+   button{
+      color:inherit;
+      transition: $tab_FooterBtn-Transition;
+
+      &:hover{
+         color:var( --clr-on-Hover);
+      }
+   }
+}
+
+
+
+
+
+// Standalone Element
+.modal{
+   position: fixed;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+   margin:auto;
+   @include flexObj(column,center,center);
+   z-index:10000;
+   background-color: rgba(56, 56, 70, 0.432);
+   font-size:1.3rem;
+
+   &-inner{
+      background:var(--clr-tab-bg-Color);
+      color:var(--clr-on-Hover);
+      @include maxWidth;
+      height:30%;
+      padding:2em;
+      border-radius: 10px;
+      
+      div{
+         @include flexObj;
+         margin-top:1em;
+
+         button{
+            background: var(--clr-primary-Bright-Blue);
+            color:inherit;
+            font-size: 1.1rem;
+            padding:.5em;
+            border-radius: 7px;
+
+            &:hover{
+               opacity:.6;
+            }
+         }
+      }
+   }
+}
+

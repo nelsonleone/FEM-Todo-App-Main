@@ -1,0 +1,49 @@
+$themes: (
+   lightTheme: (
+      primary-Bright-Blue: hsl(220, 98%, 61%),
+      check-Background:linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%)),
+      bg-Color1:hsl(236, 33%, 92%),
+      tab-bg-Color:hsl(0, 0%, 98%),
+      text-Color1:hsl(236, 9%, 61%),
+      text-Color2:hsl(235, 19%, 35%)
+   ),
+
+   darkTheme: (
+      primary-Bright-Blue: hsl(220, 98%, 61%),
+      check-Background:linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%)),
+      bg-Color1:hsl(235, 21%, 11%),
+      tab-bg-Color:hsl(235, 24%, 19%),
+      text-Color1:hsl(234, 11%, 52%),
+      text-Color2:hsl(233, 14%, 35%),
+      accent-Color:hsl(237, 14%, 26%),
+      on-Hover: hsl(236, 33%, 92%)
+   )
+);
+
+
+
+@mixin renderLightTheme{
+  $lightTheme:map-get($map: $themes, $key:lightTheme );
+
+  @each $color, $value in $lightTheme{
+     --clr-#{$color}: #{$value};
+  }
+}
+@mixin renderLightThemeImage{
+   --bg-mobile:url('/images/bg-mobile-light.jpg');
+   --bg-desktop:url('/images/bg-desktop-light.jpg');
+}
+
+
+@mixin renderDarkTheme{
+  $lightTheme:map-get($map: $themes, $key:darkTheme );
+
+  @each $color, $value in $lightTheme{
+     --clr-#{$color}: #{$value};
+  }
+}
+@mixin renderDarkThemeImage{
+   --bg-mobile:url('/images/bg-mobile-dark.jpg');
+   --bg-desktop:url('/images/bg-desktop-dark.jpg');
+}
+

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+
+$ff: 'Josefin Sans', sans-serif;
+$fs-bodyCopy: 1.05rem;
+$fs-input:.9rem;
+
+
+@mixin body{
+   font-family: $ff;
+   font-size: $fs-bodyCopy;
+}
+
+h1{
+   font-size: clamp(1.625rem, 0.712vw + 1.485rem, 2.5rem);
+   letter-spacing: 5px;
+   color: hsl(0, 0%, 100%);
+}

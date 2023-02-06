@@ -1,0 +1,45 @@
+@use '../global/typo' as *;
+
+html,
+body{
+   @include body;
+   box-sizing: border-box;
+   overflow-x:hidden;
+}
+
+*,
+*::before,
+*::after{
+   box-sizing: inherit;
+   padding:0;
+   margin:0;
+}
+
+
+button,
+input{
+   background: none;
+   outline:none;
+   border:none;
+}
+
+button,input{
+   font-family: inherit;
+   cursor:pointer;
+
+   &:focus{
+      outline:none;
+   }
+}
+
+img{
+   max-width:100%;
+   object-fit: cover;
+}
+
+li,
+a{
+   text-decoration: none;
+   list-style-type:none;
+}
+
