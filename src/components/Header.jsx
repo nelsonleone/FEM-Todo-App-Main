@@ -4,7 +4,7 @@ import { toggleTheme } from "../features/themeSlice"
 export default function Header(){
    const dispatch = useDispatch()
    const { appTheme } = useSelector(store => store.theme)
-   const themeIcon = appTheme === "light" ? "/images/icon-moon.svg" : "/images/icon-sun.svg"
+   const themeIcon = appTheme === "light" ? "/images/icon-moon.svg" : "/images/icon-sun.svg";
 
    return(
       <header>

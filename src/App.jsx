@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Header from "./components/Header";
 import InputSection from "./components/Inputsection";
 import Tab from "./components/Tab";
 import TabSelectors from "./components/TabSelectors";
