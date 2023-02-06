@@ -1,8 +1,8 @@
-import { nanoid } from "@reduxjs/toolkit"
-import { useDispatch , useSelector} from "react-redux"
-import CheckMark from "./utils/checkMark"
-import { handleInputChange , addTodo, updateActiveTodosCount} from "../features/todoSlice"
-import { useEffect } from "react"
+import { nanoid } from "@reduxjs/toolkit";
+import { useDispatch , useSelector} from "react-redux";
+import CheckMark from "./utils/CheckMark";
+import { handleInputChange , addTodo, updateActiveTodosCount} from "../features/todoSlice";
+import { useEffect } from "react";
 import AddTodoBtn from "./utils/AddTodoBtn"
 
 export default function UserInputSection(){

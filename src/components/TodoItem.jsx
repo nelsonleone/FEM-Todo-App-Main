@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { markCompleted, removeItem } from "../features/todoSlice";
 import { setShowModal } from "../features/modalSlice";
 import CancelMark from "./utils/CancelMark";
-import CheckMark from "./utils/checkMark";
+import CheckMark from "./utils/CheckMark";
 
 export function TodoItem(props){
    const {isCompleted, isActive, todo, id} = props;
