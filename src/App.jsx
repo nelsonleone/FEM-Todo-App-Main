@@ -1,8 +1,8 @@
 import Header from "./components/Header";
-import InputSection from "./components/Inputsection";
+import UserInputSection from "./components/UserInputSection";
 import Tab from "./components/Tab";
 import TabSelectors from "./components/TabSelectors";
-import FooterBlock from "./components/FooterBlock";
+import LastBlock from "./components/LastBlock";
 import { useEffect } from "react";
 import { updateAppTheme } from "./features/themeSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,10 +21,10 @@ function App() {
     <div className="App" data-theme={appTheme}>
       <Header />
       <main>
-        <InputSection />
+        <UserInputSection />
         <ul className="todo-list">
           <Tab />
-          <FooterBlock />
+          <LastBlock />
         </ul>
         <TabSelectors />
       </main>

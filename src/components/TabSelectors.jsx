@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { nanoid } from "@reduxjs/toolkit"
 import { selectTab } from "../features/todoSlice"
 
-export default function(){
+export default function TabSelectors(){
    const dispatch = useDispatch()
    const {todoTab} = useSelector(store => store.todo)
 
